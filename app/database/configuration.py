@@ -1,3 +1,5 @@
+#Conexión con la base de datos
+
 #Importación de las librerías
 
 from sqlalchemy import create_engine,event #Llamar la librería para la comunicación con la base de datos
@@ -23,3 +25,4 @@ engine = create_engine(dataBaseConnection)
 #Abrir la sesión con la base de datos
 
 SessionLocal = sessionmaker(autocommit = False, autoflush = False, bind = engine)
+

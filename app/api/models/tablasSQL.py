@@ -1,3 +1,5 @@
+#Modelos
+
 from sqlalchemy import Column, Integer, String, Float, Date, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base 
@@ -19,6 +21,7 @@ class Usuario(Base):
     
 class Gasto(Base):
     __tablename__ = 'gastos'
+    id = Column(Integer,primary_key = True, autoincrement = True)
     descripcion = Column(String(50))
     categoria = Column(String(30))
     valor = Column(Float)
