@@ -26,7 +26,7 @@ def conectarConBD():
 
 #Cada servicio (operación o transacción en BD) debe programarse como una función.
 
-@rutas.post("/usuario",response_model = Usuario, summary="Registrar un usuario en la base de datos")
+@rutas.post("/usuario",response_model = UsuarioDTORespuesta, summary="Registrar un usuario en la base de datos")
 
 def guardarUsuario(datosUsuario:UsuarioDTOPeticion, database:Session=Depends(conectarConBD)): #datos y conexión con la base de datos respectivamente.
     try:
@@ -59,7 +59,7 @@ def buscarUsuario(database:Session=Depends(conectarConBD)):
         database.rollback() #Si la base de datos falló no hacer nada. 
         raise HTTPException(status_code=400,detail= f"No se puede buscar los usuario {error}")
     
-@rutas.post("/gasto",response_model= Gasto, summary= "Registrar un gasto en la base de datos")
+@rutas.post("/gasto",response_model= GastoDTORespuesta, summary= "Registrar un gasto en la base de datos")
         
 def guardarGasto(datosGasto:GastoDTOPeticion, database:Session=Depends(conectarConBD)):
     try:
@@ -79,6 +79,8 @@ def guardarGasto(datosGasto:GastoDTOPeticion, database:Session=Depends(conectarC
         database.rollback() #Si la base de datos falló no hacer nada. 
         raise HTTPException(status_code=400,detail= f"Tenemos un problema {error}")
     
+@rutas.get("/gasto",response_model = List[GastoDTORespuesta],summary="Buscar todos los usuario en la base de datos")
+    
 def buscarGasto(database:Session=Depends(conectarConBD)):
     try:
         gastos = database.query(Gasto).all
@@ -87,3 +89,9 @@ def buscarGasto(database:Session=Depends(conectarConBD)):
     except Exception as error:
         database.rollback() #Si la base de datos falló no hacer nada. 
         raise HTTPException(status_code=400,detail= f"No se puede buscar los usuario {error}")
+    
+
+    
+ 
+    
+   

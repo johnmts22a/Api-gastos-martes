@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 #Llamado a la base para crear tablas
 
-Base = declarative_base ()
+Base = declarative_base()
 
 #Definición de las tablas de mi modelo
 
@@ -28,14 +28,14 @@ class Gasto(Base):
     fecha = Column (Date)
     
 class Categoria(Base):
-    __Tablename__ = 'categoria'
+    __tablename__ = 'categoria'
     id = Column(Integer,primary_key = True, autoincrement = True)
-    nombre = Column(Integer(50))
+    nombre = Column(Integer)
     descripcion = Column(String(70))
     fotoCategoria = Column(String(270))
     
 class Ingreso(Base):
-    __Tablename__ = 'ingreso'
+    __tablename__ = 'ingreso'
     id = Column(Integer,primary_key = True, autoincrement = True)
     valor = Column(Float)
     descripcion = Column(String(30))
