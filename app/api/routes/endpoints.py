@@ -128,7 +128,7 @@ def buscarCategoria(database:Session=Depends(conectarConBD)):
      
     except Exception as error:
         database.rollback() #Si la base de datos falló no hacer nada. 
-        raise HTTPException(status_code=400,detail= f"No se puede buscar los usuario {error}")
+        raise HTTPException(status_code=400,detail= f"No se puede buscar las categorías {error}")
     
 #Inicio para la tabla ingreso(Petición y respuesta)
 
@@ -160,7 +160,7 @@ def buscarCategoria(database:Session=Depends(conectarConBD)):
      
     except Exception as error:
         database.rollback() #Si la base de datos falló no hacer nada. 
-        raise HTTPException(status_code=400,detail= f"No se puede buscar los usuario {error}")
+        raise HTTPException(status_code=400,detail= f"No se puede buscar los ingresos {error}")
 
 
     
