@@ -1,0 +1,14 @@
+.formulario{
+    height: 800px;
+    width: 800px;
+    transform: translateX(270px) translateY(70px);
+}
+
+#label1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.buttons{
+    transform: translateX(290px);
+}
