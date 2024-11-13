@@ -29,11 +29,13 @@ botonRegistro.addEventListener("click", function(evento){
 
     RegistrarUsuario(objetoEnvioDatosUsuario)
 
-    /*Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
+    Swal.fire({
+        title: "En hora buena",
+        text: "Has registrado un usuario",
         icon: "success"
-      });*/
+      });
+
+    limpiarDatos()
 })
 
 //Objetivo: renderizar datos que vienen del backend.
@@ -66,4 +68,12 @@ BuscarUsuario().then(function(respuesta){
 
     })
 })
+
+function limpiarDatos(){
+    nombreUsuario.value = ""
+    fechaNacimientoUsuario.value = ""
+    ubicacionUsuario.value = ""
+    metaAhorroUsuario.value = ""
+    nombreUsuario.focus
+}
 

@@ -58,7 +58,7 @@ def guardarUsuario(datosUsuario:UsuarioDTOPeticion, database:Session=Depends(con
     
 def buscarUsuario(database:Session=Depends(conectarConBD)):
     try:
-        usuarios = database.query(Usuario).all
+        usuarios = database.query(Usuario).all()
         return usuarios
         
     except Exception as error:
@@ -91,7 +91,7 @@ def guardarGasto(datosGasto:GastoDTOPeticion, database:Session=Depends(conectarC
     
 def buscarGasto(database:Session=Depends(conectarConBD)):
     try:
-        gastos = database.query(Gasto).all
+        gastos = database.query(Gasto).all()
         return gastos
      
     except Exception as error:
@@ -123,7 +123,7 @@ def guardarCategoria(datosCategoria:CategoriaDTOPeticion, database:Session=Depen
     
 def buscarCategoria(database:Session=Depends(conectarConBD)):
     try:
-        categorias = database.query(Categoria).all
+        categorias = database.query(Categoria).all()
         return categorias
      
     except Exception as error:
@@ -155,7 +155,7 @@ def guardarIngreso(datosIngreso:IngresoDTOPeticion, database:Session=Depends(con
     
 def buscarCategoria(database:Session=Depends(conectarConBD)):
     try:
-        ingresos = database.query(Ingreso).all
+        ingresos = database.query(Ingreso).all()
         return ingresos
      
     except Exception as error:
